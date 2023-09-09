@@ -108,16 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             )),
                       ],
                     ),
-                    // ListTile(
-                    //   title: Text("Remember me"),
-                    //   leading: Checkbox(
-                    //       value: _checkbox,
-                    //       onChanged: (bool? value) {
-                    //         setState(() {
-                    //           _checkbox = value;
-                    //         });
-                    //       }),
-                    // ),
+                    
                     Column(
                       children: [
                         Container(

@@ -23,7 +23,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: 853,
+       height: 853,
         decoration: const BoxDecoration(
           gradient: LinearGradient(colors: [
             Colors.amber,

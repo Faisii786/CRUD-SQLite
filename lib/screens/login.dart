@@ -20,7 +20,8 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          height: 800,
+          //height: 800,
+          height: 853,
           decoration: const BoxDecoration(
             gradient: LinearGradient(colors: [
               Colors.amber,
@@ -30,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Center(
             child: Padding(
               padding: const EdgeInsets.only(top: 15, bottom: 15),
-              child: Container(
+              child: SizedBox(
                 width: 360,
                 height: 650,
                 child: Column(
@@ -69,7 +70,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               controller: _controller1,
                               decoration: const InputDecoration(
                                   border: OutlineInputBorder(),
-                                  prefixIcon: Icon(Icons.email),
+                                  prefixIcon: Icon(
+                                    Icons.email,
+                                  ),
                                   hintText: 'Enter Email',
                                   labelText: 'Email'),
                             ),
@@ -108,10 +111,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             )),
                       ],
                     ),
-                    
                     Column(
                       children: [
-                        Container(
+                        SizedBox(
                           width: 300,
                           child: ElevatedButton(
                               onPressed: () {
@@ -133,7 +135,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         const SizedBox(
                           height: 10,
                         ),
-                        Container(
+                        SizedBox(
                           width: 300,
                           child: ElevatedButton(
                               onPressed: () {

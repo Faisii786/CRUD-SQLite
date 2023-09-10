@@ -50,7 +50,7 @@ class _SecondScreenState extends State<SecondScreen> {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const LoginScreen()));
+                          builder: (context) => LoginScreen()));
                 },
               ),
             ],

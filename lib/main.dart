@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Lab Work',
       theme:  ThemeData(),
-      home: const LoginScreen(),
+      home: LoginScreen(),
     );
   }
 }

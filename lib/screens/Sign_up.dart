@@ -1,190 +1,219 @@
-// ignore: file_names
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:database_app/screens/login.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
-
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  //validation
-  final _globalkey = GlobalKey<FormState>();
-  final TextEditingController _controller1 = TextEditingController();
-  final TextEditingController _controller2 = TextEditingController();
-  final TextEditingController _controller3 = TextEditingController();
-  final TextEditingController _controller4 = TextEditingController();
-  final TextEditingController _controller5 = TextEditingController();
-  final TextEditingController _controller6 = TextEditingController();
+  GlobalKey<FormState> MyKey = GlobalKey();
 
+  TextEditingController controller1 = TextEditingController();
+  TextEditingController controller2 = TextEditingController();
+  TextEditingController controller3 = TextEditingController();
+  TextEditingController controller4 = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-       height: 853,
+        width: double.infinity,
         decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: [
-            Colors.amber,
-            Colors.green,
-          ]),
-        ),
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 15, bottom: 15),
-            child: SizedBox(
-              width: 360,
-              height: 650,
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    const Text(
-                      "SIGNUP",
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Form(
-                      key: _globalkey,
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: TextFormField(
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return 'First Name cannot be empty';
-                                }
-                                return null;
-                              },
-                              controller: _controller1,
-                              decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  prefixIcon: Icon(Icons.people),
-                                  hintText: 'Enter First Name',
-                                  labelText: 'First Name'),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: TextFormField(
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return 'Last Name cannot be empty';
-                                }
-                                return null;
-                              },
-                              controller: _controller2,
-                              decoration: const InputDecoration(
-                                  prefixIcon: Icon(Icons.people),
-                                  border: OutlineInputBorder(),
-                                  hintText: 'Enter Last Name',
-                                  labelText: 'Last Name'),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: TextFormField(
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return 'Country cannot be empty';
-                                }
-                                return null;
-                              },
-                              controller: _controller3,
-                              decoration: const InputDecoration(
-                                  prefixIcon: Icon(Icons.location_city),
-                                  border: OutlineInputBorder(),
-                                  hintText: 'Enter Country',
-                                  labelText: 'Country'),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: TextFormField(
-                              keyboardType: TextInputType.number,
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return 'Phone number cannot be empty';
-                                }
-                                return null;
-                              },
-                              controller: _controller4,
-                              decoration: const InputDecoration(
-                                  prefixIcon: Icon(Icons.call),
-                                  border: OutlineInputBorder(),
-                                  hintText: 'Enter Number',
-                                  labelText: 'Phone Number'),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: TextFormField(
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return 'Username cannot be empty';
-                                }
-                                return null;
-                              },
-                              controller: _controller5,
-                              decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  prefixIcon: Icon(Icons.email),
-                                  hintText: 'Enter Email',
-                                  labelText: 'Email'),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: TextFormField(
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return 'Password cannot be empty';
-                                }
-                                return null;
-                              },
-                              controller: _controller6,
-                              decoration: const InputDecoration(
-                                  prefixIcon: Icon(Icons.password),
-                                  border: OutlineInputBorder(),
-                                  hintText: 'Enter Password',
-                                  labelText: 'Password'),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Column(
+            gradient: LinearGradient(begin: Alignment.topCenter, colors: [
+          Colors.orange,
+          Color.fromARGB(255, 223, 135, 4),
+          Color.fromARGB(255, 189, 119, 15)
+        ])),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(
+              height: 50,
+            ),
+            const Padding(
+              padding: EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Sign Up",
+                    style: TextStyle(color: Colors.white, fontSize: 40),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Create your Account !",
+                    style: TextStyle(color: Colors.white, fontSize: 18),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
+            Expanded(
+              child: Container(
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(60),
+                        topRight: Radius.circular(60))),
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.all(30),
+                    child: Column(
                       children: [
-                        SizedBox(
-                          width: 300,
-                          child: ElevatedButton(
-                              onPressed: () {
-                                if (_globalkey.currentState!.validate()) {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const LoginScreen()),
-                                  );
-                                }
-                              },
-                              child: const Text("SIGN_UP",
-                                  style: TextStyle(fontSize: 18))),
+                        const SizedBox(
+                          height: 60,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: const [
+                                BoxShadow(
+                                    color: Color.fromRGBO(225, 95, 27, .3),
+                                    blurRadius: 20,
+                                    offset: Offset(0, 10))
+                              ]),
+                          child: Form(
+                            key: MyKey,
+                            child: Column(
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: const BoxDecoration(
+                                      border: Border(
+                                          bottom:
+                                              BorderSide(color: Colors.grey))),
+                                  child: TextFormField(
+                                    controller: controller1,
+                                    validator: (value) {
+                                      if (value!.isEmpty) {
+                                        return 'First Name is required';
+                                      }
+                                      return null;
+                                    },
+                                    decoration: const InputDecoration(
+                                        prefixIcon: Icon(Icons.person),
+                                        hintText: "First Name",
+                                        hintStyle:
+                                            TextStyle(color: Colors.grey),
+                                        border: InputBorder.none),
+                                  ),
+                                ),
+                                Container(
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: const BoxDecoration(
+                                      border: Border(
+                                          bottom:
+                                              BorderSide(color: Colors.grey))),
+                                  child: TextFormField(
+                                    controller: controller2,
+                                    validator: (value) {
+                                      if (value!.isEmpty) {
+                                        return 'Last Name is required';
+                                      }
+                                      return null;
+                                    },
+                                    decoration: const InputDecoration(
+                                        prefixIcon: Icon(Icons.person),
+                                        hintText: "Last Name",
+                                        hintStyle:
+                                            TextStyle(color: Colors.grey),
+                                        border: InputBorder.none),
+                                  ),
+                                ),
+                                Container(
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: const BoxDecoration(
+                                      border: Border(
+                                          bottom:
+                                              BorderSide(color: Colors.grey))),
+                                  child: TextFormField(
+                                    controller: controller3,
+                                    validator: (value) {
+                                      if (value!.isEmpty) {
+                                        return 'Email is required';
+                                      }
+                                      return null;
+                                    },
+                                    decoration: const InputDecoration(
+                                        prefixIcon: Icon(Icons.email),
+                                        hintText: "Email",
+                                        hintStyle:
+                                            TextStyle(color: Colors.grey),
+                                        border: InputBorder.none),
+                                  ),
+                                ),
+                                Container(
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: const BoxDecoration(
+                                      border: Border(
+                                          bottom:
+                                              BorderSide(color: Colors.grey))),
+                                  child: TextFormField(
+                                    controller: controller4,
+                                    validator: (value) {
+                                      if (value!.isEmpty) {
+                                        return 'Password is required';
+                                      }
+                                      return null;
+                                    },
+                                    decoration: const InputDecoration(
+                                        prefixIcon: Icon(Icons.password),
+                                        hintText: "Password",
+                                        hintStyle:
+                                            TextStyle(color: Colors.grey),
+                                        border: InputBorder.none),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 40,
+                        ),
+                        const Text(
+                          "Forgot Password?",
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                        const SizedBox(
+                          height: 40,
+                        ),
+                        InkWell(
+                          onTap: () {
+                            if (MyKey.currentState!.validate()) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => LoginScreen()));
+                            }
+                          },
+                          child: Container(
+                            height: 50,
+                            margin: const EdgeInsets.symmetric(horizontal: 50),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.orange[900]),
+                            child: const Center(
+                              child: Text(
+                                'SignUp',
+                                style: TextStyle(
+                                    fontSize: 20, color: Colors.white),
+                              ),
+                            ),
+                          ),
                         ),
                       ],
                     ),
-                  ],
+                  ),
                 ),
               ),
-            ),
-          ),
+            )
+          ],
         ),
       ),
     );

@@ -146,6 +146,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                   MaterialPageRoute(
                                       builder: (context) =>
                                           const SecondScreen()));
+                            controller1.clear();
+                            controller2.clear();
+                                    
                             }
                           },
                           child: Container(
@@ -167,7 +170,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         const SizedBox(
                           height: 50,
                         ),
-                        const Text("Continue with social media",
+                        const Text("------------- or -------------",
                             style: TextStyle(color: Colors.grey)),
                         const SizedBox(
                           height: 30,

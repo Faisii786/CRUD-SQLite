@@ -190,6 +190,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => LoginScreen()));
+                              controller1.clear();
+                              controller2.clear();
+                              controller3.clear();
+                              controller4.clear();
                             }
                           },
                           child: Container(

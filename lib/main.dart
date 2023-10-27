@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:database_app/screens/login.dart';
+import 'package:database_app/screens/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Lab Work',
-      theme:  ThemeData(),
-      home: LoginScreen(),
+      theme: ThemeData(),
+      home: SecondScreen(),
     );
   }
 }

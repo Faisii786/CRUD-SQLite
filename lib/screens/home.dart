@@ -3,7 +3,6 @@
 import 'package:database_app/SqlLite/dbmanager.dart';
 import 'package:database_app/SqlLite/studentform.dart';
 import 'package:database_app/SqlLite/studentmodel.dart';
-import 'package:database_app/screens/login.dart';
 import 'package:database_app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
@@ -29,47 +28,10 @@ class _SecondScreenState extends State<SecondScreen> {
 
   @override
   Widget build(BuildContext context) {
-    void AlertLogoutBox() async {
-      return showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            elevation: 10,
-            title: const Text('Sign out'),
-            content: const Text("Are you sure you want to SignOut ?"),
-            actions: [
-              TextButton(
-                child: const Text('No'),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-              TextButton(
-                child: const Text('Yes'),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => LoginScreen()));
-                },
-              ),
-            ],
-          );
-        },
-      );
-    }
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: const Text("Home"),
-        actions: [
-          IconButton(
-              onPressed: () {
-                AlertLogoutBox();
-              },
-              icon: const Icon(Icons.logout))
-        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
